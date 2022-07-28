@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src ="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
     <title>Etch-A-Sketch</title>
 </head>
 <body>
@@ -13,8 +16,15 @@
         <div>Etch-A-Sketch!</div>
     </div>
 
-    <div id = 'grid-container'>
+    <div id = 'canvas-size'>
+        <div>Canvas Side Length:</div>
+        <div class = 'canvas-input'>
+            <input type="number" min=1 max=100 value =>
+            <button class = submitBtn>Submit</button> 
+        </div>
     </div>
+
+    <div id = 'grid-container'></div>
 
     <div id = 'color-choices'>
         <button class = 'tomato'>Tomato</button>
@@ -24,6 +34,9 @@
         <button class = 'deepskyblue'>Deep Sky Blue</button>
         <button class = 'orchid'>Orchid</button>
         <button class = 'lightpink'>Light Pink</button>
+    </div>
+    <div>
+        <button class = 'clear'>Clear</button>
     </div>
 </body>
 </html>
