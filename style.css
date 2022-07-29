@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: rgb(255, 251, 247);
+    background-color: rgb(199, 168, 136);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,19 +25,24 @@ body {
     font-weight: bold;
 }
 
+#sketch-pad {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
 #grid-container {
     flex: 1;
     display: grid;
+    grid-template-columns: repeat(1, 1fr);
     min-width: 800px;
     min-height: 800px;
     border: 5px solid black;
-    padding: 0px;
 }
 
 .grid-item {
-    display: flex;
-    background-color: black;
-    margin: 0px;
+    flex: 1;
+    background-color: white;
 }
 
 
