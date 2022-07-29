@@ -1,49 +1,64 @@
 const gridContainer = document.getElementById("grid-container")
+const colorChoices = document.querySelectorAll('#color-choices>button')
+let items = document.querySelectorAll('div.grid-item');
+let chosenColor = 'white';
+let sideLength = 1
 
 //getting the canvas dimensions
 
-const submitBtn = document.querySelector('button.submitBtn') 
+const createBtn = document.querySelector('button.createBtn');
 
-let sideLength = 16
+createBtn.addEventListener('click', () => {
+    resetBoard();
+    clearBoard();
+    sideLength = document.querySelector('div.canvas-input>input').value;
+    gridContainer.style.gridTemplateColumns = "repeat(" + sideLength + ", 1fr)";
+    createGrid(sideLength);
+});
 
-submitBtn.addEventListener('click', (e) => {
-    let input = document.querySelector('div.canvas-input>input').value;
-    sideLength = input;
-    gridContainer.gridTemplateColumns = "repeat(" + sideLength + ", 1fr)"
-})
 
-for (let x = 1; x <= (sideLength^2); x++) {
-    let gridItem = document.createElement('div');
-    gridItem.classList.add('grid-item');
-    gridContainer.appendChild(gridItem);
+function createGrid(num) {
+    for (let x = 1; x <= (num**2); x++) {
+        let gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridContainer.appendChild(gridItem);
+    }
 }
 
-//hover effect 
+//color buttons and hovering function
 
-const items = document.querySelectorAll('div.grid-item');
-const orangeBtn = document.querySelector('.orange');
-const coralBtn = document.querySelector('.coral');
-const colorChoices = document.querySelectorAll('#color-choices>button')
-let chosenColor = 'white';
+function colorBoard() {
+    let items = document.querySelectorAll('div.grid-item');
+    items.forEach(item => {
+        item.addEventListener('mouseover', (e) => {
+            item.style.backgroundColor = chosenColor;
+        })
+    });
+}
 
 colorChoices.forEach(color => {
     color.addEventListener ('click', () => {
     chosenColor = color.className
-    })
-})
-
-items.forEach(item => {
-    item.addEventListener('mouseover', (e) => {
-        item.style.backgroundColor = chosenColor;
-    })
+    console.log(chosenColor)
+    colorBoard();
+    });
 });
 
 ///reset button
 
-const resetBtn = document.querySelector('button.clear');
+const clearBtn = document.querySelector('button.clear');
 
-resetBtn.addEventListener ('click', (e) => {
+function clearBoard() {
+    let items = document.querySelectorAll('div.grid-item');
     items.forEach(item => {
         item.style.backgroundColor = 'white';
-    })
-})
+    });
+}
+
+clearBtn.addEventListener ('click', (e) => {
+    clearBoard();
+});
+
+function resetBoard() {
+    gridContainer.innerHTML = ''
+}
