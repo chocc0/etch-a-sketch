@@ -1,12 +1,12 @@
 const gridContainer = document.getElementById("grid-container")
 const colorChoices = document.querySelectorAll('#color-choices>button')
-let items = document.querySelectorAll('div.grid-item');
-let chosenColor = 'white';
-let sideLength = 1
+const colorPicker = document.querySelector('.color-picker')
+let chosenColor;
+let sideLength;
 
-//getting the canvas dimensions
+//creating the grid/changing dimensions
 
-const createBtn = document.querySelector('button.createBtn');
+const createBtn = document.querySelector('button.create-btn');
 
 createBtn.addEventListener('click', () => {
     resetBoard();
@@ -16,33 +16,41 @@ createBtn.addEventListener('click', () => {
     createGrid(sideLength);
 });
 
-
 function createGrid(num) {
     for (let x = 1; x <= (num**2); x++) {
         let gridItem = document.createElement('div');
         gridItem.classList.add('grid-item');
+        gridItem.addEventListener('mouseover', colorBoard)
         gridContainer.appendChild(gridItem);
     }
 }
 
-//color buttons and hovering function
+//active input display
 
-function colorBoard() {
-    let items = document.querySelectorAll('div.grid-item');
-    items.forEach(item => {
-        item.addEventListener('mouseover', (e) => {
-            item.style.backgroundColor = chosenColor;
-        })
-    });
+const slider = document.querySelector('input.slider')
+const displayedVal = document.querySelector('div.displayed-value');
+displayedVal.textContent = slider.value
+
+slider.oninput = () => {
+    displayedVal.textContent = slider.value;
 }
 
-colorChoices.forEach(color => {
+//color buttons and hovering function
+
+
+
+function colorBoard(e) {
+    if (e.shiftKey) {
+        e.target.style.backgroundColor = colorPicker.value;
+    }
+}
+
+/*colorChoices.forEach(color => {
     color.addEventListener ('click', () => {
-    chosenColor = color.className
-    console.log(chosenColor)
-    colorBoard();
+        chosenColor = color.className
+        console.log(chosenColor)
     });
-});
+});*/
 
 ///reset button
 
