@@ -16,29 +16,37 @@
         <div>Etch-A-Sketch!</div>
     </div>
 
-    <div id = 'canvas-size'>
-        <div>Canvas Side Lengths (1 - 100):</div>
+    <div id = 'canvas-sizer'>
+        <div>Canvas Side Lengths (2 - 100):</div>
         <div class = 'canvas-input'>
-            <input type="number" min=2 max=100 value =>
-            <button class = createBtn>Create</button> 
+            <input type="range" min = 1 max = 100 class = "slider" value = 50>
+            <div class = "displayed-value"></div>
+            <button class = "create-btn">Create</button> 
         </div>
     </div>
 
-    <div id = "sketch-pad">
+    <div id = "sketch-area">
 
-        <div id = 'grid-container'></div>
+        <div id = 'tool-box'>
+            <div>Hold shift in order to draw.</div>
+            
+            <div id = 'color-choices'>
+                <input type="color" class = "color-picker" value = >
 
-        <div id = 'color-choices'>
-            <button class = 'tomato'>Tomato</button>
-            <button class = 'orange'>Orange</button>
-            <button class = 'gold'>Gold</button>
-            <button class = 'yellowgreen'>Yellow Green</button>
-            <button class = 'deepskyblue'>Deep Sky Blue</button>
-            <button class = 'orchid'>Orchid</button>
-            <button class = 'lightpink'>Light Pink</button>
-        </div>
-        <div>
-            <button class = 'clear'>Clear</button>
+                <!--<button class = 'tomato'>Tomato</button>
+                <button class = 'orange'>Orange</button>
+                <button class = 'gold'>Gold</button>
+                <button class = 'yellowgreen'>Yellow Green</button>
+                <button class = 'deepskyblue'>Deep Sky Blue</button>
+                <button class = 'orchid'>Orchid</button>
+                <button class = 'lightpink'>Light Pink</button>!-->
+            </div>
+
+            <div id = 'clear-button'></div>            
+                <button class = 'clear'>Clear</button>
+            </div>
+
+            <div id = 'grid-container'></div>
         </div>
     </div>
 </body>
