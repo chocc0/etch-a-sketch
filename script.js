@@ -1,11 +1,9 @@
 const gridContainer = document.getElementById("grid-container")
-const colorChoices = document.querySelectorAll('#color-choices>button')
 const colorPicker = document.querySelector('.color-picker')
 let chosenColor;
 let sideLength;
 
 //creating the grid/changing dimensions
-
 const createBtn = document.querySelector('button.create-btn');
 
 createBtn.addEventListener('click', () => {
@@ -26,34 +24,23 @@ function createGrid(num) {
 }
 
 //active input display
-
 const slider = document.querySelector('input.slider')
 const displayedVal = document.querySelector('div.displayed-value');
-displayedVal.textContent = slider.value
+displayedVal.textContent = (slider.value + " x " + slider.value)
 
 slider.oninput = () => {
-    displayedVal.textContent = slider.value;
+    displayedVal.textContent = (slider.value + " x " + slider.value);
 }
 
 //color buttons and hovering function
-
-
-
 function colorBoard(e) {
     if (e.shiftKey) {
         e.target.style.backgroundColor = colorPicker.value;
-    }
-}
+    };
+};
 
-/*colorChoices.forEach(color => {
-    color.addEventListener ('click', () => {
-        chosenColor = color.className
-        console.log(chosenColor)
-    });
-});*/
 
 ///reset button
-
 const clearBtn = document.querySelector('button.clear');
 
 function clearBoard() {
