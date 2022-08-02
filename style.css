@@ -225,6 +225,11 @@ div.displayed-value {
     height: 30px;
 }
 
+a {
+    color: #c4bdb5;
+
+}
+
 #credits {
     color: #c4bdb5;
     margin-right: auto;
