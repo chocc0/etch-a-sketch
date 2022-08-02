@@ -1,6 +1,6 @@
 # etch-a-sketch
 
-Part of the Odin Project Curriculum
+Part of the Odin Project Curriculum.
 
 Hello! This was by far the most complicated project so far, but the most rewarding to see it come together in the end. I learned about how to use simple animations, implement more efficient DOM practices, and overall gained more practice and insight as to how to manage my code. For anyone who is reading, I am extremely aware that my code is far from clean, but I'm very glad that it all works! I will definitely be improving in the future for my overall organization and management.
 
