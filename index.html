@@ -9,38 +9,72 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/eraser.png">
     <title>Etch-A-Sketch</title>
 </head>
 <body>
-    <div id = 'heading'>
-        <div>Etch-A-Sketch!</div>
-    </div>
-
-    <div id = "container">
-        <div id = 'tool-box'>
-            <div id = 'canvas-sizer'>
-                <div>Canvas Size:</div>
-        
-                <div class = 'canvas-input'>
-                    <input type="range" min = 1 max = 100 class = "slider" value = 50>
-                    <div class = "displayed-value"></div>
-                </div>
-        
-                <button class = "create-btn">Create</button> 
-            </div>
-            
-            <div id = 'tool-choices'>
-                <div>Hold shift in order to draw.</div>
-                <input type="color" class = "color-picker" value = >
-                <button class="eraser">Eraser</button>
-            </div>
-
-            <div id = 'clear-button'>           
-                <button class = 'clear'>Clear</button>
-            </div>
+    <div id = 'content-container'>
+        <div id = 'heading'>
+            <div>Etch-A-Sketch!</div>
         </div>
 
-        <div id = 'grid-container'></div>
+
+        <div id = "container">
+            <div id = 'tool-box'>
+                <div id = 'canvas-sizer'>
+                    <div>Canvas Size:</div>
+            
+                    <div class = 'canvas-input'>
+                        <input type="range" min = 1 max = 100 class = "slider" value = 50>
+                        <div class = "displayed-value"></div>
+                    </div>
+            
+                    <button class = "create-btn">Create</button> 
+                </div>
+                
+                <div id = 'tool-choices'>
+                    <div><b>Tools:</b></div>
+                    <div id = 'tools'>
+                        <div id = 'color-picker-container' class = "container">
+                            <input type="color" id = 'color-picker' class = "tool" value = '#000000'>
+                            <div>Color Picker</div>
+                        </div>
+                                                
+                        <div id = 'shading' class = "container">
+                            <button id = 'shader' class = "tool"><img src='./images/shader.png'></button>
+                            <div>Shader</div>
+                        </div>
+
+                        <div id = 'eraser-container' class = "container">
+                            <button  id = 'eraser' class = "tool"><img src='./images/eraser.png'></button>
+                            <div>Eraser</div>
+                        </div>
+                    </div>
+                    <div><em>Hold ctrl to draw.</em></div>
+                </div>
+
+                <div id = 'extra-buttons'>
+                    <div id = 'fill-canvas'>
+                        <button class = 'fill-canvas'>Fill Canvas</button>
+                    </div>
+                    <div id = 'toggle-grid-lines'>
+                        <button class = 'toggle-grid-lines'>Toggle Grid Lines</button>
+                    </div>
+                    <div id = 'clear-button'> 
+                        <button class = 'clear'>Clear Canvas</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id = 'grid-container'></div>
+        </div>
+
+        <div id = 'footer'>
+            <div id = 'random-container' class = "container">
+                <button  id = 'random' class = "tool" title = 'You found me!!!'></button>
+            </div>
+            <div id = credits>Website and sprites created by Chocc0 :)</div>
+        </div>
     </div>
 </body>
 </html>
